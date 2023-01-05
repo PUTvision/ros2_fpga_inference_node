@@ -1,8 +1,10 @@
 # ESA COGNITION - WP300 NOTES
 
+![husky_on_the_moon](./README_files/husky_on_the_moon.jpg)
+
 ## Assumptions
 
-The goal of Work Package 300 is to develop a framework that enables performing **deep learning inference** together with Robot Operating System (**ROS2**) directly on Xilinx Versal **VCK190** developer board. Additionally, the framework can grab **color and depth** images from a commonly available sensor (in this case it is **Luxonis OAK-D Lite**) and publish them to ROS2 topics, and also can control the **Husky robot** using ROS2 messages.
+The goal of Work Package 300 is to develop a framework that enables performing **deep learning inference** together with Robot Operating System (**ROS2**) directly on the Xilinx Versal **VCK190** developer board. Additionally, the framework can grab **color and depth** images from a commonly available sensor (in this case it is **Luxonis OAK-D Lite**) and publish them to ROS2 topics, and also can control the **Husky robot** using ROS2 messages.
 
 ## Hardware and software requirements
 
