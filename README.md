@@ -48,7 +48,9 @@ Some changes in kernel modules are required to enable some USB features. You can
 
 **Changes:**
 
-[TODO]
+ - Enable `CONFIG_USB_SERIAL_PL2303` module to enable Prolific USB-UART converter.
+
+ - Enable `INPUT_JOYSTICK` and `INPUT_JOYDEV` modules to activate joystick support. 
 
 ### Robot Operating System (ROS2-Foxy) configuration
 
@@ -102,4 +104,4 @@ Some changes in kernel modules are required to enable some USB features. You can
 
 ### Onboard configuration
 
-[TODO]
+Soon...
