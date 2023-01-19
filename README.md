@@ -37,7 +37,6 @@ petalinux-package --wic --bootfiles "binary_container_1.xclbin ramdisk.cpio.gz.u
 sudo dd if=$WORKSPACE/images/linux/petalinux-sdimage.wic of=<DEVICE> status=progress conv=sync
 ```
 
-
 ### Rootfs configuration
 
 [TODO]
@@ -49,6 +48,8 @@ Some changes in kernel modules are required to enable some USB features. You can
 **Changes:**
 
  - Enable `CONFIG_USB_SERIAL_PL2303` module to enable Prolific USB-UART converter.
+
+ - Enable `USB_SERIAL_XSENS_MT` module to enable Xsens MTi USB-UART converter.
 
  - Enable `INPUT_JOYSTICK` and `INPUT_JOYDEV` modules to activate joystick support. 
 
@@ -104,4 +105,41 @@ Some changes in kernel modules are required to enable some USB features. You can
 
 ### Onboard configuration
 
-Soon...
+* Set bash as default shell (.bashrc and .bash_profile are used by default)
+
+    ```bash
+    chsh -s /bin/bash root
+    ```
+
+* Install inference engine lib
+
+    ```bash
+    git clone https://github.com/mwiejak-KP/cognition-xilinx-inference-runner.git
+    cd cognition-xilinx-inference-runner/
+
+    python3 xilinx_runner/setup.py install
+    ```
+
+* Create ROS2 inference engine node
+    ```bash
+    mkdir -p ~/ros2_ws/src
+    cd ~/ros2_ws/src
+
+    git clone https://github.com/PUTvision/ros2_fpga_inference_node.git inference_node/
+    cd ~/ros2_ws
+
+    colcon build
+    source install/setup.bash
+    ```
+
+* Usage:
+    ```bash
+    # run husky node
+    ros2 launch husky_base put_base.launch.py
+
+    # run camera node
+    ros2 launch depthai_cognition rgb_depth_publisher.launch.py
+
+    # run inference engine
+    ros2 run inference_node inference_engine 
+    ```
