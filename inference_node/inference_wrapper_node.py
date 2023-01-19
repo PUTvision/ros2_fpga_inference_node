@@ -37,10 +37,11 @@ class InferenceWrapperNode(Node):
         out = self.sigmoid(out)
         out = np.uint8(out*255)
 
-        self.publish_segmentation(out)
+        self.publish_segmentation(out, msg.header)
 
-    def publish_segmentation(self, mask: np.ndarray):
+    def publish_segmentation(self, mask: np.ndarray, header):
         msg = CompressedImage()
+        msg.header = header
         msg.format = "jpeg"
         msg.data = np.array(cv2.imencode('.jpg', mask)[1]).tostring()
 
