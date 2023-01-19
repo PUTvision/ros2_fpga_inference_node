@@ -1,6 +1,8 @@
 # ROS2 Foxy node for computer vision tasks inference on Versal VCK190
 
-![husky_on_the_moon](./README_files/husky_on_the_moon.jpg)
+<div align="center">
+  <img src="./README_files/husky_on_the_moon.jpg" height="350px" />
+ </div>
 
 ## Assumptions
 
