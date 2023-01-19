@@ -1,4 +1,4 @@
-# ROS2 Foxy node for computer vision tasks inference on Versal VCK190
+# ROS2 Foxy node for computer vision tasks inference on Versal VCK190 together with Husky Rover and OAK-D Lite depth camera
 
 <div align="center">
   <img src="./README_files/husky_on_the_moon.jpg" height="350px" />
