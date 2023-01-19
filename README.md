@@ -1,4 +1,4 @@
-# ESA COGNITION - WP300 NOTES
+# ROS2 Foxy node for computer vision tasks inference on Versal VCK190
 
 ![husky_on_the_moon](./README_files/husky_on_the_moon.jpg)
 
@@ -143,3 +143,9 @@ Some changes in kernel modules are required to enable some USB features. You can
     # run inference engine
     ros2 run inference_node inference_engine 
     ```
+
+## Acknowledge
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/ESA_logo.png" height="60px" />
+
+**This work was funded by European Space Agency OSIP, PO number: 4000138073, COGNITION project.**
