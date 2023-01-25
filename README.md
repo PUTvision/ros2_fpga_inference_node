@@ -136,6 +136,9 @@ Some changes in kernel modules are required to enable some USB features. You can
 
 * Usage:
     ```bash
+    # run imu node
+    ros2 launch bluespace_ai_xsens_mti_driver xsens_mti_node.launch.py
+
     # run husky node
     ros2 launch husky_base put_base.launch.py
 
