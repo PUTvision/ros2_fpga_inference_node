@@ -135,6 +135,15 @@ Some changes in kernel modules are required to enable some USB features. You can
     ```
 
 * Usage:
+
+    ```bash
+    # run inference engine
+    ros2 run inference_node inference_engine 
+    ```
+
+
+    > **Scripts below are added to Systemd services and you don't need to run it.**
+
     ```bash
     # run imu node
     ros2 launch bluespace_ai_xsens_mti_driver xsens_mti_node.launch.py
@@ -145,8 +154,6 @@ Some changes in kernel modules are required to enable some USB features. You can
     # run camera node
     ros2 launch depthai_cognition rgb_depth_publisher.launch.py
 
-    # run inference engine
-    ros2 run inference_node inference_engine 
     ```
 
 ## Acknowledge
