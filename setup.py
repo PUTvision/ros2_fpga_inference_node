@@ -1,15 +1,14 @@
 from setuptools import setup
+from glob import glob
 
-package_name = 'ros2_fpga_inference_node'
-submodules = 'ros2_fpga_inference_node/inference_engine'
+package_name = 'inference_node'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name, submodules],
+    packages=[package_name],
     data_files=[
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
+        ('share/' + package_name + '/data/', glob('./data/*')),
         ('share/' + package_name, ['package.xml']),
     ],
     install_requires=['setuptools'],
@@ -21,8 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'image_publisher = ros2_fpga_inference_node.camera_image_publisher:main',
-            'inference_engine = ros2_fpga_inference_node.inference_wrapper_node:main'
+            'inference_engine = inference_node.inference_wrapper_node:main'
             ],
     },
 )
