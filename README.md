@@ -105,13 +105,24 @@ Some changes in kernel modules are required to enable some USB features. You can
     - [put-meta-depthai-ros](https://github.com/PUTvision/put-meta-depthai-ros) - ROS bindings for DepthAI. Based on [depthai-ros/foxy](github.com/luxonis/depthai-ros) sources. It provides ROS2 nodes for DepthAI API.
     - [put-meta-husky](https://github.com/PUTvision/put-meta-husky) - Husky mobile robot package for Petalinux usage. Based on [husky/foxy-devel](https://github.com/husky/husky/tree/foxy-devel) package. 
 
-### Onboard configuration
+### Onboard configuration (first boot)
 
-* Set bash as default shell (.bashrc and .bash_profile are used by default)
+* Connect via USB using serial console (115200 baud rate, 8N1, no flow control).
+    ```bash
+    sudo picocom -b 115200 /dev/ttyUSB1
+    ```
+
+    > **Note:** You have to use USB1 port.
+
+    Then, set bash as default shell (.bashrc and .bash_profile are used by default)
 
     ```bash
     chsh -s /bin/bash root
     ```
+
+    Call `bash` command to start bash shell. You should see welcome message, together with some information about the system: **ETHERNET IP ADDRESS** and **ROS_DOMAIN_ID**.
+
+    After that, you can login via SSH using `root` user and `root` password.
 
 * Install inference engine lib
 
@@ -121,6 +132,8 @@ Some changes in kernel modules are required to enable some USB features. You can
 
     python3 xilinx_runner/setup.py install
     ```
+    
+    > **Note:** Note that actually the repository is private. You have to contact with the author to get access to it.
 
 * Create ROS2 inference engine node
     ```bash
@@ -134,27 +147,37 @@ Some changes in kernel modules are required to enable some USB features. You can
     source install/setup.bash
     ```
 
-* Usage:
+    > **Note:** Note that actually the repository is private. You have to contact with the author to get access to it.
 
-    ```bash
-    # run inference engine
-    ros2 run inference_node inference_engine 
-    ```
+### Usage:
 
+```bash
+# run inference engine
+ros2 run inference_node inference_engine 
+```
 
-    > **Scripts below are added to Systemd services and you don't need to run it.**
+> **Scripts below are added to Systemd services and you don't need to run it.**
 
-    ```bash
-    # run imu node
-    ros2 launch bluespace_ai_xsens_mti_driver xsens_mti_node.launch.py
+```bash
+# run imu node
+ros2 launch bluespace_ai_xsens_mti_driver xsens_mti_node.launch.py
 
-    # run husky node
-    ros2 launch husky_base put_base.launch.py
+# run husky node
+ros2 launch husky_base put_base.launch.py
 
-    # run camera node
-    ros2 launch depthai_cognition rgb_depth_publisher.launch.py
+# run camera node
+ros2 launch depthai_cognition rgb_depth_publisher.launch.py
+```
 
-    ```
+## Known issues
+
+* Booting process is performed 3 times. It is caused by the fact that the system is not able to find the rootfs partition.
+
+* Sometimes, during a boot process, the system hangs with a message like: "No found devices in /dev...". In this case, you have to reboot the system. 
+
+* When booting without Internet connection, it is required to set datatime manually. Otherwise, the ROS system will hang. Because we set `date -s "2023-01-01 12:00:00"` as systemd service, it is required to update the date after 2023.
+
+* Boot time is very long. From switching on the power to begin of communication with the Husky robot, it takes about 2 minutes.
 
 ## Acknowledge
 
