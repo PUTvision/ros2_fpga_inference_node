@@ -10,7 +10,29 @@ The goal of Work Package 300 is to develop a framework that enables performing *
 
 ## Hardware and software requirements
 
-[TODO]
+Below you can find the list of hardware and software that we use for this project.
+
+### Software
+
+* Vitis 2022.1
+* Vitis HLS 2022.1
+* Vivado 2022.1
+* Petalinux 2022.1
+
+### Hardware
+
+* Host PC with Ubuntu 20.04.4 LTS.
+* [Xilinx Versal VCK190](https://www.xilinx.com/products/boards-and-kits/vck190.html) developer board.
+* [Luxonis OAK-D Lite](https://docs.luxonis.com/en/latest/pages/products/bw1098obc/) depth camera.
+* [Husky robot](https://www.clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/) with [Ouster OS1-64](https://www.ouster.io/os1-64) lidar sensor.
+* [IMU](https://www.xsens.com/products/mti-30-series) sensor.
+
+### Development tools
+
+* VS Code - good IDE for remote development.
+* Tmux - terminal multiplexer, allows to detach and reattach to a running session.
+* ROS2 Foxy - host installation enables the generation of ROS2 messages and services.
+* Picocom - serial communication terminal.
 
 ## Workflow
 
