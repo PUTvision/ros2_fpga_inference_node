@@ -124,17 +124,6 @@ Some changes in kernel modules are required to enable some USB features. You can
 
     After that, you can login via SSH using `root` user and `root` password.
 
-* Install inference engine lib
-
-    ```bash
-    git clone https://github.com/mwiejak-KP/cognition-xilinx-inference-runner.git
-    cd cognition-xilinx-inference-runner/
-
-    python3 xilinx_runner/setup.py install
-    ```
-    
-    > **Note:** Note that actually the repository is private. You have to contact with the author to get access to it.
-
 * Create ROS2 inference engine node
     ```bash
     mkdir -p ~/ros2_ws/src
