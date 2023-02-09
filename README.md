@@ -165,7 +165,7 @@ Some changes in kernel modules are required to enable some USB features. You can
 
     - [put-meta-base-config](https://github.com/PUTvision/put-meta-base-config) - Base configuration containing common things like bashrc, etc.
     - [put-meta-depthai-core](https://github.com/PUTvision/put-meta-depthai-core) - DepthAI core package. Based on [depthai-core](https://github.com/luxonis/depthai-core) sources. It enables the usage of DepthAI API in C++ and Python. 
-    - [put-meta-depthai-ros](https://github.com/PUTvision/put-meta-depthai-ros) - ROS bindings for DepthAI. Based on [depthai-ros/foxy](github.com/luxonis/depthai-ros) sources. It provides ROS2 nodes for DepthAI API.
+    - [put-meta-depthai-ros](https://github.com/PUTvision/put-meta-depthai-ros) - ROS bindings for DepthAI. Based on [depthai-ros/foxy](https://github.com/luxonis/depthai-ros) sources. It provides ROS2 nodes for DepthAI API.
     - [put-meta-husky](https://github.com/PUTvision/put-meta-husky) - Husky mobile robot package for Petalinux usage. Based on [husky/foxy-devel](https://github.com/husky/husky/tree/foxy-devel) package. 
 
 ### Onboard configuration (first boot)
