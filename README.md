@@ -61,9 +61,50 @@ petalinux-package --wic --bootfiles "binary_container_1.xclbin ramdisk.cpio.gz.u
 sudo dd if=$WORKSPACE/images/linux/petalinux-sdimage.wic of=<DEVICE> status=progress conv=sync
 ```
 
+### Petalinux configuration
+
+Changes in the Petalinux configuration are required to enable some features. You can edit it using `petalinux-config` tool.
+
+* Set MAC address for the ethernet interface.
+    ```
+    Subsystem AUTO Hardware Settings  --->
+        Ethernet Settings  --->
+            Disable: Randomise MAC address
+            Set: Ethernet MAC address
+            Enable: Obtain IP address automatically
+    ```
+
+* Enable startup from SD card.
+    ```
+    Image Packaging Configuration  --->
+        Root filesystem type (INITRD)  --->
+            Enable: INITRD
+    ```
+
+* Set hostname.
+    ```
+    Firmware Version Configuration  --->
+        Set: Host name
+        Set: Product name
+        Set: Firmware version
+    ```
+
 ### Rootfs configuration
 
-[TODO]
+Changes in the rootfs are required to configure some features. You can edit it using `petalinux-config -c rootfs` tool.
+
+* Ensure dropbear SSH server is enabled.
+    ```
+    Image Features  --->
+        Enable: ssh-server-dropbear
+    ```
+
+* Enable debug tweaks and auto-login to enable remote development.
+    ```
+    Image Features  --->
+        Enable: debug-tweaks
+        Enable: auto-login
+    ```
 
 ### Kernel configuration
 
