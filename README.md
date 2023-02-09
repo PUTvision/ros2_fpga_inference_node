@@ -167,6 +167,7 @@ Some changes in kernel modules are required to enable some USB features. You can
     - [put-meta-depthai-core](https://github.com/PUTvision/put-meta-depthai-core) - DepthAI core package. Based on [depthai-core](https://github.com/luxonis/depthai-core) sources. It enables the usage of DepthAI API in C++ and Python. 
     - [put-meta-depthai-ros](https://github.com/PUTvision/put-meta-depthai-ros) - ROS bindings for DepthAI. Based on [depthai-ros/foxy](https://github.com/luxonis/depthai-ros) sources. It provides ROS2 nodes for DepthAI API.
     - [put-meta-husky](https://github.com/PUTvision/put-meta-husky) - Husky mobile robot package for Petalinux usage. Based on [husky/foxy-devel](https://github.com/husky/husky/tree/foxy-devel) package. 
+    - [put-meta-xsens](https://github.com/PUTvision/put-meta-xsens) - modified Xsens package. Based od [bluespace_ai_xsens_ros_mti_driver](https://github.com/bluespace-ai/bluespace_ai_xsens_ros_mti_driver).
 
 ### Onboard configuration (first boot)
 
