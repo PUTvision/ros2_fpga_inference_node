@@ -222,6 +222,11 @@ ros2 launch husky_base put_base.launch.py
 ros2 launch depthai_cognition rgb_depth_publisher.launch.py
 ```
 
+## Example inference
+
+![rqt_viz](https://putvision.github.io/assets/images/posts/2023/02/husky_inf.webp)
+
+
 ## Known issues
 
 * Booting process is performed 3 times. It is caused by the fact that the system is not able to find the rootfs partition.
